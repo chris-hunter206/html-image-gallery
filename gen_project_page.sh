@@ -1,25 +1,20 @@
 #!/bin/bash
 
-# generate html image carousel pages for an arbitrary number of images
-# in a linked image gallery.
+# Generate html image carousel pages for an arbitrary number of jpeg
+# images in an a subfolder named 'images' of the current directory
 
+# 
 echo "<!DOCTYPE html>
 <html>
 <head>
   <meta charset = \"UTF-8\">
-  <link rel=\"stylesheet\" href=\"css/style.css\">
-  <link rel=\"stylesheet\" href=\"css/header.css\">
   <link rel=\"stylesheet\" href=\"css/gallery.css\">
-  <script src=\"components/header_gallery.js\" type=\"text/javascript\" defer></script>
-  <script src=\"components/footer.js\" type=\"text/javascript\" defer></script>
   <script src=\"components/slider.js\" type=\"text/javascript\" defer></script>
   <title>Projects > x > x</title>
 </head>
 
 <body>
   <div id=\"container\">
-
-    <header-component></header-component>
 
     <main>
       <!-- Container for the image gallery -->
@@ -28,8 +23,9 @@ echo "<!DOCTYPE html>
         <!-- Thumbnail images -->
         <div class=\"row\">"
 
+# create the image thumbnail stanzas
 i=1
-for image_file_name in `ls images/${1}/${2}/*thumb.jpg`; do
+for image_file_name in `ls images/*thumb.jpg`; do
     echo "
           <div class=\"column\">
               <img class=\"demo cursor\"
@@ -55,9 +51,12 @@ echo "
 
         <!-- Full-width images with number text -->"
 
+# Create the full size image stanzas. This also gets the number of 
+# images to produce the correct numbering (1 / 2, etc) for each
+# image in the gallery
 i=1
-for image_file_name in `ls images/${1}/${2}/*med.jpg`; do
-    length=`ls images/${1}/${2}/*med.jpg | wc -l | sed -e 's/ //g'`;
+for image_file_name in `ls images/*med.jpg`; do
+    length=`ls images/*med.jpg | wc -l | sed -e 's/ //g'`;
     echo "        <div class=\"mySlides\">
             <div class=\"numbertext\">${i} / ${length}</div>
             <img src=\"${image_file_name}\"
@@ -67,10 +66,9 @@ for image_file_name in `ls images/${1}/${2}/*med.jpg`; do
     i=$(($i+1));
 done;
 
+# print the static html to close out the page
 echo "      </div> <!-- End Carousel -->
     </main>
-
-    <footer-component></footer-component>
 
   </div> <!-- End Container -->
 </body>
