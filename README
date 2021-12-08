@@ -1,7 +1,11 @@
+Code for a simple HTML image gallery. This can be used to generate boilerplate
+pages for any directory of images.
+
 CSS, HTML, and Javascript for the image slider was originally sourced from
 code examples at https://www.w3schools.com/css/css_image_gallery.asp
 
-this assumes you have a directory structure like:
+this assumes you have a directory structure like the following. Also note
+images should be named with leading zeros as shown:
 
 .
 ├── components
@@ -9,11 +13,17 @@ this assumes you have a directory structure like:
 ├── css
 │   └── gallery.css
 └── images
-    └── image01.jpg
+    ├── image01.jpg
+    ├── image01_med.jpg
+    ├── image01_thumb.jpg
+    ├── image02.jpg
+    ├── image02_med.jpg
+    ├── image02_thumb.jpg
+    ├── image03.jpg
+    ├── image03_med.jpg
+    └── image03_thumb.jpg
 
 1. Copy the gen_project_page.sh script to somewhere in your path, like $HOME/bin/
 2. In the current directory, run the script like so:
 
  gen_project_page.sh > pagename.html
-
-
