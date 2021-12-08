@@ -1,0 +1,19 @@
+CSS, HTML, and Javascript for the image slider was originally sourced from
+code examples at https://www.w3schools.com/css/css_image_gallery.asp
+
+this assumes you have a directory structure like:
+
+.
+├── components
+│   └── slider.js
+├── css
+│   └── gallery.css
+└── images
+    └── image01.jpg
+
+1. Copy the gen_project_page.sh script to somewhere in your path, like $HOME/bin/
+2. In the current directory, run the script like so:
+
+ gen_project_page.sh > pagename.html
+
+
