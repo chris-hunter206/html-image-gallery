@@ -1,3 +1,10 @@
+/* set color variables so we can change them globally */
+:root {
+  --white: rgba(255,255,255,1);
+  --gray: rgba(128,128,128,1);
+  --black: rgba(0,0,0,1);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,12 +28,11 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 550px;
   width: auto;
   padding: 16px;
-  /*margin-top: -50px;*/
   margin-top: 50px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
   font-size: 40px;
   border-radius: 0 3px 3px 0;
@@ -42,12 +48,12 @@
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--black);
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: var(--color-5);
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
@@ -57,9 +63,9 @@
 /* Container for image text */
 .caption-container {
   text-align: left;
-  background-color: #222;
+  background-color: var(--black);
   padding: 2px 16px;
-  color: white;
+  color: var(--white);
 }
 
 .row:after {

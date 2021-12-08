@@ -23,7 +23,7 @@ images should be named with leading zeros as shown:
     ├── image03_med.jpg
     └── image03_thumb.jpg
 
-1. Copy the gen_project_page.sh script to somewhere in your path, like $HOME/bin/
+1. Copy the gen_gallery_page.sh script to somewhere in your path, like $HOME/bin/
 2. In the current directory, run the script like so:
 
- gen_project_page.sh > pagename.html
+ gen_gallery_page.sh > pagename.html
